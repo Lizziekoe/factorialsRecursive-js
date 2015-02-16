@@ -1,10 +1,12 @@
-$document.ready(function(){
-  ("#form").submit(function(event) {
-    var inputtedfirstName = $("#first-name").val();
-    var inputtedlastName = $("#last-name").val();
-    var inputtedaddress = $("#address").val();
+$(document).ready(function(){
+  $("form#new-contact").submit(function(event) {
+    var inputtedFirstName = $("#first-name").val();
+    var inputtedLastName = $("#last-name").val();
+    var inputtedAddress = $("#address").val();
+    var contact = {firstName: inputtedFirstName, lastName: inputtedLastName, address: inputtedAddress};
 
-    var contacts = {firstName: };
+    $("#name-list").append("<li>" + contact.firstName + " " + contact.lastName + "</li>");
+
 
     event.preventDefault();
 
