@@ -1,25 +1,31 @@
-$(document).ready(function(){
-  $("form#new-contact").submit(function(event) {
-    var inputtedFirstName = $("#first-name").val();
-    var inputtedLastName = $("#last-name").val();
-    var inputtedAddress = $("#address").val();
-    var contact = {firstName: inputtedFirstName, lastName: inputtedLastName, address: inputtedAddress};
+var factorial = function(number){
 
-    $("#name-list").append("<li><span class = 'contact'>" + contact.firstName + " " + contact.lastName + "</span></li>");
+  var product = 1;
+  var i = 1;
 
-
-    $(".contact").last().click(function() {
-
-
-      $("#show-contact").show();
-      $("#show-contact h3").text(contact.firstName + " " + contact.lastName);
-      $('.first-name').text(contact.firstName);
-      $('.last-name').text(contact.lastName);
-      $('.address').text(contact.address);
-    });
+  while(i <= number) {
+    product = i * product;
+    i++;
+  }
+  return product;
 
 
-    event.preventDefault();
 
-  });
-});
+ // OR YOU CAN DO THIS
+
+  var product = 1;
+
+  for(var i=1; i<=number; i++) {
+    product = i * product;
+  }
+  return product;
+};
+
+
+ // OR YOU CAN DO THIS IF YOURE TRYNNA BE RECURSIVE
+
+if(number > 1){
+  return number * factorial(number-1);
+} else{
+  return 1;
+}
